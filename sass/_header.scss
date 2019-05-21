@@ -1,0 +1,99 @@
+.header {
+    grid-column: full-start / full-end;
+    background-image: linear-gradient(rgba($navy-blue, .85), rgba($navy-blue, .30)), url(../img/raw/kyle-johnson-389070-unsplash-min.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3rem;
+    fill: #fff;
+    animation: fadeInScale 0.5s ease-in-out 0.2s;
+    animation-fill-mode: backwards;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    
+    @media only screen and (max-width: $bp-medium) {
+            justify-content: center;
+            -webkit-clip-path: none;
+            clip-path: none;
+    }
+    
+    
+    &__main-nav {
+        list-style: none;
+        align-self: flex-end;
+        flex: calc(50/120);
+        font-size: 1.8rem;
+        animation-fill-mode: backwards;
+        margin-right: 2rem;
+        
+        @media only screen and (max-width: $bp-medium) {
+            display: none;
+        }
+        
+        & li {
+        display: inline-block;
+            & a:link,
+            & a:visited {
+            padding: 1rem 3rem;   
+            color: $leather;
+            text-decoration: none;
+            text-transform: lowercase;
+            }  
+            & a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: $coral;
+            transition: width 0.6s;
+            }
+            & a:hover::after {
+            width: 100%;
+            }
+        }
+    }
+
+    &__btn {
+        &, &:link, &:visited {
+        margin-top: 4rem;
+        background-color: $leather;
+        color: $eggshell;
+        padding: 1.5rem 8rem;
+        }
+        &::after {
+        background-color: $leather;
+        color: $eggshell;
+        }
+        &--animated {
+        animation: moveInBottom 1s ease-out 1.5s;
+        animation-fill-mode: backwards;
+        }
+    }
+    
+    &__heading-2 {
+        animation: moveInLeft .5s ease-out .5s;
+        animation-fill-mode: backwards;
+
+    }
+    &__heading-1 {
+        animation: fadeIn .5s ease-out 1s;
+        animation-fill-mode: backwards;
+        
+    }
+    
+    &__heading-1::after {
+        content: "";
+        display: inline-block;
+        width: 9rem;
+        height: 9rem;
+        background-image: url(../img/MaiaClubLogo/teste2.svg);
+        background-size: 100% 100%;
+        margin-left: 1rem;
+        margin-top: 2rem;
+        margin-bottom: -1rem;
+    }
+}
+

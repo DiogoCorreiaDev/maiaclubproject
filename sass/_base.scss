@@ -1,0 +1,162 @@
+// COLOR VARIABLES
+$navy-blue: #0F1626;
+$leather: #AB987A;
+$coral: #FF533D;
+$eggshell: #F5F5F5;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+// FONT VARIABLES
+$font-primary: 'Fira Sans', sans-serif;
+
+// BREAKPOINTS
+
+$bp-largest: 75em; //1200px/16=75em
+$bp-large: 62.5em; //1000px
+$bp-medium: 50em; //800px
+$bp-small: 37.5em; //600px
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; //10px
+    background-color: $eggshell;
+        
+    @media only screen and (max-width: $bp-largest) {
+        font-size: 50%;    
+    }
+}
+
+body {
+    font-family: $font-primary;
+    color: $leather;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 120vh 80vh min-content repeat(4, min-content);
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])[center-end] minmax(6rem, 1fr) [full-end];
+    
+    @media only screen and (max-width: $bp-medium) {
+             grid-template-rows: 100vh 60vh min-content repeat(4, min-content);
+    }
+}
+.regressa-topo {
+    
+    position: fixed;
+    background-color: rgba($leather, .4);
+    width: 6rem;
+    height: 6rem;
+    right: 6rem;
+    bottom: 6rem;
+    z-index: 999;
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 1px 1px 6px;
+    filter: brightness(.7);
+    color: $leather;
+    display: none;
+    
+    &:hover {
+        background-color:   rgba($leather, 1);
+        box-shadow: 1px 1px 1px;
+        filter: brightness(1);
+         }
+    
+     &__icon {
+        position: relative;
+        margin-top: 2.6rem;
+        margin-left: .5rem;
+        transform: rotate(-45deg);
+         
+        &,
+        &::before {
+            width: 3rem;
+            height: 2px;
+            background-color: rgba($navy-blue,.6);
+            display: inline-block;
+            
+            
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            transition: all .2s;
+            transform: rotate(90deg);
+            
+        }
+    }
+}
+.btn {
+    &, &:link, &:visited {
+    text-transform: uppercase;
+    text-decoration: none;    
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+        text-align: center;
+        
+            @media only screen and (max-width: $bp-large) {
+            padding: .8rem 1.5rem;
+    }
+    
+    }
+    
+  //Change for the <button> element
+    border: none;
+    cursor: pointer;
+    
+    &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(black,.2);
+        &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+        }
+    }
+    &:active, &:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba(black,.2);
+    }
+    &--white {
+    background-color: white;
+       
+    &::after {
+    background-color: white;
+    }
+    }
+    &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+    }
+
+    &--animated {
+    animation: moveInBottom .5s ease-out .75s;
+/*    coloca as propriedades iguais ao 0% no botao:*/
+    animation-fill-mode: backwards;
+    }
+}

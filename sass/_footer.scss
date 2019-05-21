@@ -1,0 +1,51 @@
+.footer {
+    grid-column: full-start / full-end;
+    background-color: rgba($navy-blue, 1);
+//    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__social-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        color: $navy-blue;
+        
+        & li a:link, & li a:visited{
+            font-size: 3rem;
+            display: inline-block;
+            color: $eggshell;
+            padding: 1rem;
+            margin-left: 2rem;
+        }
+    }
+    &__logo {
+        align-self: center;
+        justify-content: center;
+        margin: 5.5rem 0 1rem 0;
+        width: 6rem;
+        
+    }
+    p {
+        text-align: center;
+        font-size: 2rem;
+        margin: 1rem 0;
+        
+    }
+}
+.ion-social-facebook, .ion-social-twitter,.ion-social-googleplus,.ion-social-instagram {
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+.ion-social-facebook:hover {
+    color: #3b5998;
+}
+.ion-social-twitter:hover {
+    color: #88aced;
+}
+.ion-social-googleplus:hover {
+    color: #dd4b39;
+}
+.ion-social-instagram:hover {
+    color: #c32aa3;
+}

@@ -1,0 +1,239 @@
+.adesao {
+    grid-column: full-start / full-end;
+    background-image: linear-gradient(rgba(gray, .7), rgba(gray, .7)), url(../img/raw/m-plt-611605-unsplash-min.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+        &__heading-2 {
+            text-align: center;
+            display: block;
+            padding: 5rem 0;
+            
+            }
+        &__planos {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            
+            @media only screen and (max-width: $bp-medium) {
+                flex-direction: column;
+                font-size: 1rem;
+            }   
+        }
+}
+.plano {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 40rem;
+    width: 40rem;
+    margin-bottom: 5rem;
+    
+    @media only screen and (max-width: $bp-large) {
+        height: 40rem;
+        width: 40rem;
+    }
+    @media only screen and (max-width: $bp-medium) {
+            height: auto;
+    }
+    
+    &__lado {
+    height: 40rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(black, .15);
+    border-radius: 50%;
+        
+        @media only screen and (max-width: $bp-large) {
+                height: 30rem;
+                width: 30rem;
+        }
+        @media only screen and (max-width: $bp-medium) {
+            height: auto;
+            position: relative;
+            box-shadow: none;
+            width: 40rem;
+            
+            }
+        &--frente {
+            @media only screen and (max-width: $bp-medium) {
+            border-top-right-radius: 2rem;
+            border-top-left-radius: 2rem;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            }
+        }
+        &--tras {
+            transform: rotateY(180deg);
+            
+            
+            &-1 {
+                background-image: linear-gradient(to right bottom, $navy-blue, $navy-blue);
+            }
+            &-2 {
+                background-image: linear-gradient(to right bottom, $coral, $coral);
+            }
+            &-3 {
+                background-image: linear-gradient(to right bottom, $leather, $leather);
+            }
+            @media only screen and (max-width: $bp-medium) {
+            transform: rotateY(0deg);
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            }
+        }
+        
+    }
+    &:hover &__lado--frente {
+        transform: rotateY(-180deg);
+        
+        @media only screen and (max-width: $bp-medium) {
+            transform: rotateY(0deg);
+        }
+    }
+    &:hover &__lado--tras {
+        transform: rotateY(0);
+        
+        @media only screen and (max-width: $bp-medium) {
+            transform: rotateY(0deg);
+        }
+    }
+    
+    &__imagem {
+        background-size: cover;
+        height: 40rem;
+        background-blend-mode: screen;
+        @media only screen and (max-width: $bp-medium) {
+            height: 30rem;
+        }
+        
+        &--1 {
+            background-image: linear-gradient(to right bottom, $navy-blue, $navy-blue), url(../img/raw/victor-freitas-593843-unsplash-min.jpg);
+        } 
+        &--2 {
+            background-image: linear-gradient(to right bottom, $coral, $coral), url(../img/raw/victor-freitas-588470-unsplash-min.jpg);
+        } 
+        &--3 {
+            background-image: linear-gradient(to right bottom, $leather, $leather), url(../img/raw/active-adult-athlete-863993-min.jpg);
+        } 
+    }
+    
+    &__heading {
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        @media only screen and (max-width: $bp-medium) {
+            top: 90%;
+        }
+    }
+    
+    &__heading-span {
+        padding: 2.5rem 20rem;
+        white-space: nowrap;
+        
+        
+        &--1 {
+            background-image: linear-gradient(to right bottom, rgba($navy-blue,.9), rgba($navy-blue,.9))
+        }
+        &--2 {
+            background-image: linear-gradient(to right bottom, rgba($coral,.9), rgba($coral,.9))
+        }
+        &--3 {
+            background-image: linear-gradient(to right bottom, rgba($leather,.9), rgba($leather,.9))
+        }
+    }
+    
+    &__detalhes {
+        padding: 0 3rem;
+        
+        @media only screen and (max-width: $bp-large) {
+            font-size: .5rem;
+            padding: 0 1.5rem;
+        }
+        
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+            
+            li {
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 1rem;
+                color: white;
+            
+                &:not(:last-child) {
+                    border-bottom: 1px solid black;
+                }
+            }
+        }
+    }
+    &__cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+        
+        @media only screen and (max-width: $bp-medium) {
+            position: relative;
+            transform: translate(-50%, 0%);
+            width: 100%;
+            padding: 1rem 1rem;
+        }
+        
+    }
+    &__price-box {
+        text-align: center;
+        color: white;
+    }
+    &__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        @media only screen and (max-width: $bp-large) {
+            font-size: 1rem;
+    }
+    }
+    &__price-value {
+        font-size: 6rem;
+        font-weight: 100;
+        
+        @media only screen and (max-width: $bp-large) {
+            font-size: 3rem;
+        }
+        @media only screen and (max-width: $bp-medium) {
+            font-size: 4rem;
+        }
+    }
+}
+.btn--white {
+    
+
+        &--1 {
+            color: $navy-blue;
+        }
+        &--2 {
+            color: $coral;
+        }
+        &--3 {
+            color: $leather;
+        }
+}
+

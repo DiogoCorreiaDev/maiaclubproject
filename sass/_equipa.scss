@@ -1,0 +1,281 @@
+.equipa {
+    grid-column: full-start / full-end;
+    
+    display: grid;
+    grid-template-columns: repeat(12, minmax(10rem, 1fr));
+    grid-template-rows: repeat(8, minmax(10rem, 1fr));
+    align-items: end;
+    position: relative;
+    overflow: hidden;
+
+    
+    @media only screen and (max-width: $bp-large) {
+        margin-left: 0;
+        grid-template-columns: repeat(6, minmax(10rem, 1fr));
+        grid-template-rows: repeat(4, minmax(10rem, 1fr));
+        
+    }
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $eggshell;
+        margin-top: 10rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+        margin-top: 5rem;
+    }
+    
+    &__meio-circulo {
+        position: absolute;
+        width: 90vw;
+        height: 100rem;
+        left: 50%;
+        bottom: 0%;
+        transform: translate(-50%, 60%);
+        border-radius: 50%;
+        background-color: rgba($leather, .6);
+        z-index: 1;
+        pointer-events: none;
+        
+        @media only screen and (max-width: $bp-medium) {
+                left: 0;
+                bottom: 50%;
+                height: 200rem;
+                background-color: rgba($coral, .6);
+            }
+        
+    }
+    
+    
+    &__heading-2 {
+        grid-row: 1 / span 1;
+        padding: 2rem 2rem;
+        grid-column: 1 / -1;
+        justify-self: center;
+        z-index: 20;
+        background-color: rgba($navy-blue, 1);
+        
+        @media only screen and (max-width: $bp-large) {
+                align-self: flex-start;
+            }
+        @media only screen and (max-width: $bp-medium) {
+                align-self: center;
+            } 
+    }
+    
+    &__treinador {
+        background-size: 45rem 67.5rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 45rem;
+        height: 67.5rem;
+        filter: grayscale(1) brightness(.4);
+        text-align: center;
+        grid-row: 2 / span 5;
+        transition: all .5s;
+        
+        @media only screen and (max-width: $bp-large) {
+        filter: none;
+        background-size: 36rem 54rem;
+        width: 36rem;
+        height: 54rem;
+        
+        }
+        
+            &:hover {
+                filter: grayscale(0) brightness(.9);
+                z-index: 9;
+                
+                @media only screen and (max-width: $bp-medium) {
+                filter: none;
+                }
+                
+            }
+        
+        &--foto-1{
+            background-image: url(../img/raw/trainers/PT2_filtro.png);
+            -webkit-clip-path: polygon(6% 38%, 9% 28%, 29% 19%, 23% 14%, 20% 2%, 30% 1%, 59% 0%, 72% 16%, 86% 23%, 89% 30%, 91% 42%, 91% 50%, 88% 61%, 81% 73%, 73% 88%, 68% 100%, 16% 100%, 11% 85%, 4% 66%);
+            clip-path: polygon(6% 38%, 9% 28%, 29% 19%, 23% 14%, 20% 2%, 30% 1%, 59% 0%, 72% 16%, 86% 23%, 89% 30%, 91% 42%, 91% 50%, 88% 61%, 81% 73%, 73% 88%, 68% 100%, 16% 100%, 11% 85%, 4% 66%);
+            grid-column: 4 / span 2;
+            grid-row: 3 / span 6;
+            z-index: 6;
+            margin-left: -4rem;
+            position: relative;
+            
+            @media only screen and (max-width: $bp-large) {
+                clip-path: none;
+                -webkit-clip-path: none;
+                margin-left: 0;
+                grid-column: 1 / span 2;
+                grid-row: 2 / span 7;
+            }
+            @media only screen and (max-width: $bp-medium) {
+                grid-column: 1 / -1;
+                justify-self: center;
+                grid-row: 2 / span 1;
+            }
+            
+            
+            &:hover > div {
+                opacity: 1;
+                top: 50%;
+            }
+
+        }
+        &--foto-2{
+            background-image: url(../img/raw/trainers/PT1_filtro.png);
+            -webkit-clip-path: polygon(0 43%, 9% 28%, 21% 23%, 25% 15%, 26% 2%, 30% 1%, 59% 0%, 67% 17%, 77% 26%, 83% 36%, 100% 46%, 100% 61%, 92% 68%, 81% 73%, 73% 88%, 68% 100%, 16% 100%, 11% 85%, 0 68%);
+            clip-path: polygon(0 43%, 9% 28%, 21% 23%, 25% 15%, 26% 2%, 30% 1%, 59% 0%, 67% 17%, 77% 26%, 83% 36%, 100% 46%, 100% 61%, 92% 68%, 81% 73%, 73% 88%, 68% 100%, 16% 100%, 11% 85%, 0 68%);
+            grid-column: 6 / span 2;
+            grid-row: 3 / span 6;
+            z-index: 7;
+            position: relative;
+            
+            @media only screen and (max-width: $bp-large) {
+                clip-path: none;
+                -webkit-clip-path: none;
+                grid-column: 3 / span 2;
+                grid-row: 2 / span 7;
+            }
+            @media only screen and (max-width: $bp-medium) {
+                grid-column: 1 / -1;
+                justify-self: center;
+                grid-row: 3 / span 1;
+            }
+            
+            &:hover div {
+                opacity: 1;
+                top: 50%;
+            }
+
+        }
+        &--foto-3{
+            background-image: url(../img/raw/trainers/PT4_filtro.png);
+            -webkit-clip-path: polygon(0% 0%, 50% 0%, 69% 41%, 100% 58%, 100% 86%, 65% 86%, 66% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 50% 0%, 69% 41%, 100% 58%, 100% 86%, 65% 86%, 66% 100%, 0% 100%);
+            grid-column: 8 / span 2;
+            grid-row: 3 / span 6;
+            z-index: 5;
+            margin-left: 6rem;
+            position: relative;
+            
+            @media only screen and (max-width: $bp-large) {
+                clip-path: none;
+                -webkit-clip-path: none;
+                grid-column: 5 / span 2;
+                grid-row: 2 / span 7;
+                margin-left: -6rem;
+            }
+            @media only screen and (max-width: $bp-medium) {
+                grid-column: 1 / -1;
+                justify-self: center;
+                grid-row: 4 / span 1;
+                margin-left: 0;
+                
+            }
+            
+            &:hover div {
+                opacity: 1;
+                top: 50%;
+                        
+            }
+        }
+        
+        &--caracteristicas {
+            display: grid;
+            grid-template-rows: repeat(4, max-content);
+            grid-template-columns: repeat(2, max-content);
+            justify-content: center;
+            opacity: 0;
+            align-items: center;
+            z-index: 30;
+            padding: 1rem;
+            width: 100%;
+            color: $eggshell;
+            border-radius: 1rem;
+
+            
+            h4 {
+                grid-row: 1 / 2;
+                grid-column: 1 / span 2;
+                text-align: center;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            
+            p{
+                font-size: 1.8rem;
+            }
+            
+            &--svg {
+                width: 2rem;
+                height: 2rem;
+                fill: $eggshell;
+            } 
+            &--1 {
+                position: absolute;
+                top: 70%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background-color: rgba($coral,.7);
+                width: 40%;
+                transition: all 1s;
+                
+                @media only screen and (max-width: $bp-medium) {
+                    left: 120%;
+                    width: 50%;
+                    opacity: 1;
+                    transition: none;
+                    top: 50%;
+                }
+                @media only screen and (max-width: $bp-small) {
+                    left: 50%;
+                }
+                
+            }
+            &--2 {
+                background-color: rgba($navy-blue,.7);
+                position: absolute;
+                top: 70%;
+                left: 40%;
+                transform: translate(-50%,-40%);
+                width: 40%;
+                transition: all 1s;
+                
+                @media only screen and (max-width: $bp-medium) {
+                    left: 120%;
+                    width: 50%;
+                    opacity: 1;
+                    transition: none;
+                    top: 50%;
+                }
+                @media only screen and (max-width: $bp-small) {
+                    left: 50%;
+                }
+
+            }
+            &--3 {
+                background-color: rgba($leather,.7);
+                position: absolute;
+                top: 70%;
+                left: 30%;
+                transform: translate(-50%,-30%);
+                width: 40%;
+                transition: all 1s;
+                
+                @media only screen and (max-width: $bp-medium) {
+                    left: 120%;
+                    width: 50%;
+                    opacity: 1;
+                    transition: none;
+                    top: 50%;
+                }
+                @media only screen and (max-width: $bp-small) {
+                    left: 50%;
+                }
+
+            }    
+        }
+    }
+}
